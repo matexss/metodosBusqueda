@@ -90,4 +90,87 @@ public class MetodosBusquedaBinaria {
             pantalla.showMessage(people[indexPerson].toString());
         }
     }
+
+
+
+
+
+    public void showPersonByEdad() {
+        ordenarPorEdad();
+        pantalla.showMessage("Ingrese la edad a buscar:");
+        int edadBuscar = pantalla.getScanner().nextInt();
+        
+        int bajo = 0;
+        int alto = people.length - 1;
+        boolean encontrado = false;
+    
+        while (bajo <= alto) {
+            int centro = bajo + (alto - bajo) / 2;
+            int valorCentro = people[centro].getEdad();
+    
+            // Mostrar el arreglo actual
+            for (int i = bajo; i <= alto; i++) {
+                System.out.print(people[i].getEdad() + " | ");
+            }
+            System.out.println();
+            pantalla.showMessage("bajo=" + bajo + "  alto=" + alto + "  centro=" + centro + "  valorCentro=" + valorCentro);
+    
+            if (valorCentro == edadBuscar) {
+                pantalla.showMessage("--> ENCONTRADO");
+                pantalla.showMessage("La persona con la edad " + edadBuscar + " es " + people[centro].getName());
+                encontrado = true;
+                break;
+            } else if (valorCentro < edadBuscar) {
+                pantalla.showMessage("--> DERECHA");
+                bajo = centro + 1;
+            } else {
+                pantalla.showMessage("--> IZQUIERDA");
+                alto = centro - 1;
+            }
+        }
+    
+        if (!encontrado) {
+            pantalla.showMessage("No se encontró una persona con esa edad.");
+        }
+    }
+    
+    private void ordenarPorEdad() {
+        for (int i = 0; i < people.length - 1; i++) {
+            for (int j = 0; j < people.length - i - 1; j++) {
+                if (people[j].getEdad() > people[j + 1].getEdad()) {
+                    Persona temp = people[j];
+                    people[j] = people[j + 1];
+                    people[j + 1] = temp;
+                }
+            }
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

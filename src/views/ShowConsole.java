@@ -19,4 +19,14 @@ public class ShowConsole {
     public void showMessage(String message){
         System.out.println(message);
 }
+
+
+public Scanner getScanner(){
+    return scanner;
+    
 }
+
+
+
+}
+
