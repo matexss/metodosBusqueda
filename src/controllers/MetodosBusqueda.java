@@ -42,4 +42,6 @@ public class MetodosBusqueda {
             showConsole.showMessage("Persona con código " + codeToFind + " no encontrada.");
         }
     }
+
+  
 }

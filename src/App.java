@@ -1,4 +1,5 @@
-import controllers.MetodosBusqueda;
+
+import controllers.MetodosBusquedaBinaria;
 import models.Persona;
 
 public class App {
@@ -12,7 +13,11 @@ public class App {
         personas[4] = new Persona(105, "Lucía");
         personas[5] = new Persona(106, "Carlos");
         personas[6] = new Persona(107, "Sofía");
-        MetodosBusqueda mB = new MetodosBusqueda(personas);
+//        MetodosBusqueda mB = new MetodosBusqueda(personas);
+
+        MetodosBusquedaBinaria mBB = new MetodosBusquedaBinaria(personas);
+        mBB.showPersonByCode();
+        mBB.showPersonByName();
 
     }
 

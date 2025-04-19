@@ -18,5 +18,5 @@ public class ShowConsole {
 
     public void showMessage(String message){
         System.out.println(message);
-    }
+}
 }
